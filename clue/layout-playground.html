@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Playground</title>
+  <style>
+    .playground {
+      padding: 0;
+      margin: 0;
+      border: 1px solid #666;
+      width: 100%;
+      background-color: #EEEEEE;
+      min-height: 300px;
+      position: relative;
+    }
+    .playground > body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>Layout with Flexbox</h1>
+  <p>create css classes for building layout/UI</p>
+  <p style="font-weight: bold;">DO NOT CHANGE A HTML STRUCTURE</p>
+  
+  <h2>Vertical Menu</h2>
+  <div class="playground">
+    <style>
+      .menu-container {
+        width:fit-content;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #333;
+        margin: 10px;
+      }
+      .menu-item {
+        padding: 4px 8px;
+        border-bottom: 1px solid #333;
+        text-align: center;
+        background: #ccc;
+        color: #000;
+      }
+      .menu-item:last-child {
+        border-bottom: unset 
+      }
+    </style>
+
+    <div class="menu-container">
+      <div class="menu-item">FirstMenu</div>
+      <div class="menu-item">Menu 2</div>
+      <div class="menu-item">Menu 3</div>
+      <div class="menu-item">Menu 4</div>
+      <div class="menu-item">Menu 5</div>
+      <div class="menu-item">Last Menu</div>
+    </div>
+  </div>
+
+  <h2>Header</h2>
+  <div class="playground">
+    <style>
+      .header-container {
+        display: flex;
+        border: 1px solid #333;
+        margin: 10px;
+        padding: 10px;
+      }
+      .header-content-left {
+        display: flex;
+      }
+      .header-content {
+        text-align: center;
+        flex-grow: 1;
+        align-self: center;
+      }
+    </style>
+
+    <div class="header-container">
+      <div class="header-content-left">
+        <img src="https://www.svgrepo.com/show/18507/back-button.svg" width="20">
+      </div>
+      <div class="header-content">Header</div>
+      <div class="header-content-right">
+        <img src="https://www.svgrepo.com/show/62923/new-page.svg" width="20">
+      </div>
+    </div>
+  </div>
+
+  <h2>Navigation Tab</h2>
+  <div class="playground">
+    <style>
+      .navigation-container {
+        display: flex;
+        border: 1px solid #333;
+        margin: 10px;
+      }
+      .navigation-item {
+        flex-grow: 1;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .navigation-item-icon {
+        text-align: center;
+      }
+    </style>
+
+    <div class="navigation-container">
+      <div class="navigation-item">
+        <div class="navigation-item-icon">
+          <img src="https://www.svgrepo.com/show/40557/history.svg" width="20">
+        </div>
+        <div class="navigation-item-label">
+          First Menu
+        </div>
+      </div>
+      <div class="navigation-item">
+        <div class="navigation-item-icon">
+          <img src="https://www.svgrepo.com/show/20644/house.svg" width="20">
+        </div>
+        <div class="navigation-item-label">
+          Second Menu
+        </div>
+      </div>
+      <div class="navigation-item">
+        <div class="navigation-item-icon">
+          <img src="https://www.svgrepo.com/show/116660/wrench.svg" width="20">
+        </div>
+        <div class="navigation-item-label">
+          Third Menu
+        </div>
+      </div>
+      <div class="navigation-item">
+        <div class="navigation-item-icon">
+          <img src="https://www.svgrepo.com/show/70145/anti-virus.svg" width="20">
+        </div>
+        <div class="navigation-item-label">
+          Very long text Menu
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Card</h2>
+  <div class="playground">
+    <style>
+      .card-list-container {
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .card-container {
+        width: 300px;
+        border-color: 1px solid #333;
+        border-radius: 10px;
+        margin-right: 20px;
+      }
+      .card-content {
+        background: white;
+      }
+      .card-content-detail-section {
+        padding: 10px;
+      }
+      .product-name{
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .product-description {
+        color: #666;
+      }
+      .product-price {
+        text-align: right;
+        font-family: monospace;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    </style>
+
+    <div>
+      <div class="card-list-container">
+        <div class="card-container">
+          <div class="card-content">
+            <div class="card-content-image-section">
+              <img src="https://picsum.photos/id/237/200/300" style="width: 100%;">
+            </div>
+            <div class="card-content-detail-section">
+              <div class="product-name">
+                Elite Obsidian
+              </div>
+              <div class="product-description">
+                Awesome product from Mars made by hand of Ultraman
+              </div>
+              <div class="product-price">
+                1,000
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-content">
+            <div class="card-content-image-section">
+              <img src="https://picsum.photos/id/237/200/300" style="width: 100%;">
+            </div>
+            <div class="card-content-detail-section">
+              <div class="product-name">
+                Elite Obsidian
+              </div>
+              <div class="product-description">
+                Awesome product from Mars made by hand of Ultraman
+              </div>
+              <div class="product-price">
+                1,000
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-content">
+            <div class="card-content-image-section">
+              <img src="https://picsum.photos/id/237/200/300" style="width: 100%;">
+            </div>
+            <div class="card-content-detail-section">
+              <div class="product-name">
+                Elite Obsidian
+              </div>
+              <div class="product-description">
+                Awesome product from Mars made by hand of Ultraman
+              </div>
+              <div class="product-price">
+                1,000
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-content">
+            <div class="card-content-image-section">
+              <img src="https://picsum.photos/id/237/200/300" style="width: 100%;">
+            </div>
+            <div class="card-content-detail-section">
+              <div class="product-name">
+                Elite Obsidian
+              </div>
+              <div class="product-description">
+                Awesome product from Mars made by hand of Ultraman
+              </div>
+              <div class="product-price">
+                1,000
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-content">
+            <div class="card-content-image-section">
+              <img src="https://picsum.photos/id/237/200/300" style="width: 100%;">
+            </div>
+            <div class="card-content-detail-section">
+              <div class="product-name">
+                Elite Obsidian
+              </div>
+              <div class="product-description">
+                Awesome product from Mars made by hand of Ultraman
+              </div>
+              <div class="product-price">
+                1,000
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Sidebar</h2>
+  <div class="playground">
+    <style>
+      .sidebar-container {
+        width: 250px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        border-right: 1px solid #999;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+      }
+      .sidebar-profile-section {
+        font-size: 24px;
+        font-weight: bold;
+        padding: 4px 8px;
+        border-bottom: 1px solid #999;
+      }
+      .sidebar-menu-section {
+        flex-grow: 1;
+      }
+      .sidebar-menu-item {
+        padding: 4px 8px;
+      }
+      .sidebar-footer-section {
+        padding: 4px 8px;
+        border-top: 1px solid #999;
+      }
+    </style>
+
+    <div class="sidebar-container">
+      <div class="sidebar-profile-section">
+        <div>I'm Header</div>
+      </div>
+      <div class="sidebar-menu-section">
+        <div class="sidebar-menu-item"> Menu 1</div>
+        <div class="sidebar-menu-item"> Menu 2</div>
+        <div class="sidebar-menu-item"> Menu 3</div>
+      </div>
+      <div class="sidebar-footer-section">
+        <div>
+          Logout
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</body>
+</html>
