@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Card</title>
+</head>
+<body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .board {
+      background-color: rgb(24, 150, 24);
+      border-radius: 10px;
+      border: 2px solid #333;
+      margin: 30px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .board-content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: space-evenly;
+
+    }
+    .card {
+      width: 180px;
+      height: 300px;
+      border-width: 3px;
+      border-style: solid;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      padding: 8px 16px;
+
+    }
+    .card-type-container {
+      text-align: right;
+      font-size: 48px;
+    }
+    .card-number-container {
+      text-align: center;
+      font-size: 72px;
+      line-height: 200px;
+    }
+    .card.red {
+      border-color: rgb(172, 0, 0);
+    }
+    .card.red > .card-type-container {
+      color: rgb(172, 0, 0);
+    }
+    .card.red > .card-number-container {
+      color: rgb(172, 0, 0);
+    }
+    .card.black {
+      border-color: #333;
+    }
+    .card.black > .card-type-container {
+      color: #333;
+    }
+    .card.black > .card-number-container {
+      color: #333;
+    }
+    .random-button {
+      height: 150px;
+      font-size: 48px;
+    }
+  </style>
+  <div class="board">
+    <div class="board-content">
+
+      <div id="card-1" class="card">
+        <div class="card-type-container">♣</div>
+        <div class="card-number-container">A</div>
+      </div>
+
+      <div id="card-2" class="card">
+        <div class="card-type-container">♦</div>
+        <div class="card-number-container">6</div>
+      </div>
+
+      <div id="card-3" class="card">
+        <div class="card-type-container">♥</div>
+        <div class="card-number-container">10</div>
+      </div>
+
+      <div id="card-4" class="card">
+        <div class="card-type-container">♠</div>
+        <div class="card-number-container">K</div>
+      </div>
+    </div>
+
+    <button class="random-button" onclick="randomAll()">Click to Random</button>
+  </div>
+
+  <script>
+    var CARD_TYPE = ['♣', '♦', '♥', '♠']
+    var CARD_NUMBER = ['A', '1', '2', '3', '4', '5', '6',' 7', '8', '9', '10', 'J', 'Q', 'K']
+
+    function random(max) {
+      return parseInt(Math.random() * max) % max
+    }
+
+    function randomCard(id) {
+      
+      var cardType = CARD_TYPE[random(CARD_TYPE.length)]
+      var cardNumber = CARD_NUMBER[random(CARD_NUMBER.length)]
+      
+      var cardElm = document.getElementById(id)
+      var cardTypeEl = cardElm.querySelector('.card-type-container').innerHTML = cardType
+      var cardNumberEl = cardElm.querySelector('.card-number-container').innerHTML = cardNumber
+
+      if (cardType === '♥' || cardType === '♦') {
+        cardElm.classList.remove(['black'])
+        cardElm.classList.add(['red'])
+      } else {
+        cardElm.classList.remove(['red'])
+        cardElm.classList.add(['black'])
+      }
+    }
+
+    function randomAll () {
+      randomCard('card-1')
+      randomCard('card-2')
+      randomCard('card-3')
+      randomCard('card-4')
+    }
+  </script>
+</body>
+</html>
