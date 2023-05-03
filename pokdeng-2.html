@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .board {
+            background-color: rgb(77, 165, 0);
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: 12px;
+            border: 2px solid #666;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            padding: 10px;
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+        }
+        .card {
+            width: 100px;
+            height: 150px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 0 10px 1px #666;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 2px solid #000;
+        }
+        .card.heart, .card.diamond {
+            color: rgb(156, 0, 0);
+            border-color: rgb(156, 0, 0);
+        }
+        .card-title {
+            text-align: right;
+            font-size: 24px;
+            padding: 4px 10px;
+        }
+        .card-body {
+            text-align: center;
+            font-size: 56px;
+            flex-grow: 1;
+        }
+        .footer {
+            background-color: pink;
+        }
+        .random-button {
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1. layout
+        2. board
+        3. card ui
+        4. button
+        5. create click event for button
+        6. console.log when click on button
+        7. find the way to change text of card
+        8. find the way to change text for every card
+        9. test random function
+        10. change text by random value
+        
+     -->
+    <div class="board">
+        <div class="content">
+            <div class="card">
+                <div class="card-title">x</div>
+                <div class="card-body">y</div>
+            </div>
+
+            <div class="card heart">
+                <div class="card-title">x</div>
+                <div class="card-body">y</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">x</div>
+                <div class="card-body">y</div>
+            </div>
+
+            <div class="card diamond">
+                <div class="card-title">x</div>
+                <div class="card-body">y</div>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="random-button">Click me to Random</button>
+        </div>
+    </div>
+</body>
+</html>
